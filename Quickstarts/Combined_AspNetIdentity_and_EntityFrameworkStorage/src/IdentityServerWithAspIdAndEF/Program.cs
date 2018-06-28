@@ -34,7 +34,7 @@ namespace IdentityServerWithAspIdAndEF
 
             var host = BuildWebHost(args);
 
-            if (!seed)
+            if (seed)
             {
                 SeedData.EnsureSeedData(host.Services);
             }
