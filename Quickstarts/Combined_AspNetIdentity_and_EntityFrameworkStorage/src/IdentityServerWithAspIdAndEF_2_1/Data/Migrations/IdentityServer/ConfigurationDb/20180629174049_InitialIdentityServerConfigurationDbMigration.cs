@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.ConfigurationDb
@@ -12,7 +13,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Enabled = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(maxLength: 200, nullable: false),
                     DisplayName = table.Column<string>(maxLength: 200, nullable: true),
@@ -28,7 +29,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Enabled = table.Column<bool>(nullable: false),
                     ClientId = table.Column<string>(maxLength: 200, nullable: false),
                     ProtocolType = table.Column<string>(maxLength: 200, nullable: false),
@@ -74,7 +75,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Enabled = table.Column<bool>(nullable: false),
                     Name = table.Column<string>(maxLength: 200, nullable: false),
                     DisplayName = table.Column<string>(maxLength: 200, nullable: true),
@@ -93,7 +94,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Type = table.Column<string>(maxLength: 200, nullable: false),
                     ApiResourceId = table.Column<int>(nullable: false)
                 },
@@ -113,7 +114,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(maxLength: 200, nullable: false),
                     DisplayName = table.Column<string>(maxLength: 200, nullable: true),
                     Description = table.Column<string>(maxLength: 1000, nullable: true),
@@ -139,7 +140,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 {
                     Expiration = table.Column<DateTime>(nullable: true),
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(maxLength: 1000, nullable: true),
                     Value = table.Column<string>(maxLength: 2000, nullable: true),
                     Type = table.Column<string>(maxLength: 250, nullable: true),
@@ -161,7 +162,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Type = table.Column<string>(maxLength: 250, nullable: false),
                     Value = table.Column<string>(maxLength: 250, nullable: false),
                     ClientId = table.Column<int>(nullable: false)
@@ -182,7 +183,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Origin = table.Column<string>(maxLength: 150, nullable: false),
                     ClientId = table.Column<int>(nullable: false)
                 },
@@ -202,7 +203,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     GrantType = table.Column<string>(maxLength: 250, nullable: false),
                     ClientId = table.Column<int>(nullable: false)
                 },
@@ -222,7 +223,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Provider = table.Column<string>(maxLength: 200, nullable: false),
                     ClientId = table.Column<int>(nullable: false)
                 },
@@ -242,7 +243,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     PostLogoutRedirectUri = table.Column<string>(maxLength: 2000, nullable: false),
                     ClientId = table.Column<int>(nullable: false)
                 },
@@ -262,7 +263,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Key = table.Column<string>(maxLength: 250, nullable: false),
                     Value = table.Column<string>(maxLength: 2000, nullable: false),
                     ClientId = table.Column<int>(nullable: false)
@@ -283,7 +284,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     RedirectUri = table.Column<string>(maxLength: 2000, nullable: false),
                     ClientId = table.Column<int>(nullable: false)
                 },
@@ -303,7 +304,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Scope = table.Column<string>(maxLength: 200, nullable: false),
                     ClientId = table.Column<int>(nullable: false)
                 },
@@ -324,7 +325,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 {
                     Expiration = table.Column<DateTime>(nullable: true),
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(maxLength: 2000, nullable: true),
                     Value = table.Column<string>(maxLength: 2000, nullable: false),
                     Type = table.Column<string>(maxLength: 250, nullable: true),
@@ -346,7 +347,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Type = table.Column<string>(maxLength: 200, nullable: false),
                     IdentityResourceId = table.Column<int>(nullable: false)
                 },
@@ -366,7 +367,7 @@ namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations.IdentityServer.Config
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Type = table.Column<string>(maxLength: 200, nullable: false),
                     ApiScopeId = table.Column<int>(nullable: false)
                 },
