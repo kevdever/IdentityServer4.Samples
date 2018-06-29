@@ -36,12 +36,12 @@ namespace MvcClient.Controllers
 
         public async Task<IActionResult> CallApiUsingClientCredentials()
         {
-            var tokenClient = new TokenClient("http://localhost:5000/connect/token", "mvc", "secret");
+            var tokenClient = new TokenClient("https://localhost:5050/connect/token", "mvc", "secret");
             var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
 
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
-            var content = await client.GetStringAsync("http://localhost:5001/identity");
+            var content = await client.GetStringAsync("https://localhost:5051/identity");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View("json");
@@ -53,7 +53,7 @@ namespace MvcClient.Controllers
 
             var client = new HttpClient();
             client.SetBearerToken(accessToken);
-            var content = await client.GetStringAsync("http://localhost:5001/identity");
+            var content = await client.GetStringAsync("https://localhost:5051/identity");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View("json");

@@ -72,8 +72,8 @@ namespace IdentityServerWithAspIdAndEF_2_1
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris = { "http://localhost:5002/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+                    RedirectUris = { "http://localhost:5002/signin-oidc","https://localhost:5052/signin-oidc" },
+                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc", "https://localhost:5052/signout-callback-oidc" },
 
                     AllowedScopes =
                     {
@@ -92,9 +92,9 @@ namespace IdentityServerWithAspIdAndEF_2_1
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
-                    RedirectUris = { "http://localhost:5003/callback.html" },
-                    PostLogoutRedirectUris = { "http://localhost:5003/index.html" },
-                    AllowedCorsOrigins = { "http://localhost:5003" },
+                    RedirectUris = { "http://localhost:5003/callback.html", "https://localhost:5053/callback.html" },
+                    PostLogoutRedirectUris = { "http://localhost:5003/index.html", "https://localhost:5053/index.html" },
+                    AllowedCorsOrigins = { "http://localhost:5003", "https://localhost:5053" },
 
                     AllowedScopes =
                     {

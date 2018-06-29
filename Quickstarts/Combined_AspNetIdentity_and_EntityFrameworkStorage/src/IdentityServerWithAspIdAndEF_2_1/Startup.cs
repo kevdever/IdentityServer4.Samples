@@ -117,6 +117,17 @@ namespace IdentityServerWithAspIdAndEF_2_1
                         RoleClaimType = "role"
                     };
                 });
+
+            services.AddCors(options =>
+            {
+                // this defines a CORS policy called "default"
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("https://localhost:5053")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -130,12 +141,14 @@ namespace IdentityServerWithAspIdAndEF_2_1
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                //app.UseHsts();
+                app.UseHsts();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             //app.UseCookiePolicy();
+
+            app.UseCors("default");
 
             app.UseIdentityServer();
 

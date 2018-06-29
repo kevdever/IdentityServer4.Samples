@@ -23,8 +23,8 @@ namespace MvcClient
                 {
                     options.SignInScheme = "Cookies";
 
-                    options.Authority = "http://localhost:5000";
-                    options.RequireHttpsMetadata = false;
+                    options.Authority = "https://localhost:5050";
+                    options.RequireHttpsMetadata = true;
 
                     options.ClientId = "mvc";
                     options.ClientSecret = "secret";
@@ -47,7 +47,10 @@ namespace MvcClient
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
             }
+
+            app.UseHttpsRedirection();
 
             app.UseAuthentication();
 
