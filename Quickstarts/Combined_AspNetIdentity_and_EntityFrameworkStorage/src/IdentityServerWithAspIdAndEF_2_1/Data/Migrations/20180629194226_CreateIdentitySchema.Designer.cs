@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IdentityServerWithAspIdAndEF_2_1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180629174039_CreateIdentitySchema")]
+    [Migration("20180629194226_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
