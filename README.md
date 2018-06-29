@@ -1,3 +1,6 @@
+# Please see the AspNetCore2.1 branch for the changes in this fork.
+
+
 # IdentityServer4.Samples
 Samples for IdentityServer4
 
