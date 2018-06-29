@@ -16,6 +16,7 @@
     },
     "IdentityServerWithAspIdAndEF_2_1": {
       "commandName": "Project",
+      "commandLineArgs": "/seed",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -205,3 +205,4 @@ FakesAssemblies/
 tempkey.rsa
 identityserver4_log.txt
 /Quickstarts/Combined_AspNetIdentity_and_EntityFrameworkStorage/src/IdentityServerWithAspIdAndEF/AspIdUsers.db
+/Quickstarts/Combined_AspNetIdentity_and_EntityFrameworkStorage/src/IdentityServerWithAspIdAndEF_2_1/AspIdUsers.db
